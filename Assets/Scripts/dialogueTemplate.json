@@ -1,0 +1,96 @@
+
+    {
+      
+     
+        "cutscene_Dialogue":
+        [
+            {
+                "Start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    }
+                ],
+                "End":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Insert text Here",
+                        "Name": "TestDuck"
+                    }
+                ]
+            }
+        ],
+        "actionSelections":
+        [
+            {
+            
+                "Name": "SelectionStart",
+                "Context": "You ain’t getting past me!",
+                "choices":
+                [
+                    {
+                        "ReactionText": "",
+                        "Reaction": 
+                                [
+                                    ""
+                                ],
+                        "dialogueLine": "Hey, let’s just talk about this.",
+                        "next_Dialogue_Selection": "Selection2"
+                    },
+                    {
+                        "Reaction": 0,
+                        "dialogueLine": "Hey, let’s just talk about this.",
+
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -1,
+                        "dialogueLine": "Are you just Ghost’s pawn?",
+
+                        "next_Dialogue_Selection": "Selection3"
+                    },
+                    {
+                        "Reaction": -2,
+
+                        "dialogueLine": "OH YEAH I AM",
+                        "next_Dialogue_Selection": "Selection4"
+                    }
+                ]
+            }
+        ]
+      
+    }
