@@ -11,6 +11,7 @@ public class dialogueLibrary : MonoBehaviour
 {
 
     public bool dev_SkipCutscene = false;
+    public bool inSelection = false;
     private DialogueParsing.DialogueData mainData;
 
 	public RawImage dialogueChoiceBox;
@@ -24,29 +25,45 @@ public class dialogueLibrary : MonoBehaviour
     [SerializeField] Image playerTextEnter;
     [SerializeField] float camSize;
     [SerializeField] UnityEvent functions;
-    
 
-    public IEnumerator Dialogue(DialogueParsing.Choice choice)
-	{
-		foreach (DialogueParsing.DialogueLine line in choice.dialogueLines)
-		{
-            //functions.
-            for (int i = 1; i <= line.dialogueText.Length; i++)
-            {
-                playerText.text = line.dialogueText.Substring(0, i);
+    private IEnumerator TypeWrite(string text, TMP_Text textBox)
+    {
+        for (int i = 1; i <= text.Length; i++)
+        {
+            textBox.text = text.Substring(0, i);
                 
-
-                yield return new WaitForSeconds(dialogueSpeed);
-            }
+            yield return new WaitForSeconds(dialogueSpeed);
+        }
+        
+        textBox.text = text;
+    }
+    
+    
+    public IEnumerator Dialogue(DialogueParsing.Selection selection)
+    {
+        foreach (DialogueParsing.DialogueLine line in selection.context)
+        {
+            StartCoroutine( TypeWrite(line.dialogueText, playerText));
+            
             playerTextEnter.enabled = true;
-            playerText.text = line.dialogueText;
 			
             yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
             playerTextEnter.enabled = false;
 
 			playerText.text = "";
 		}
-		stopDialogue();
+        
+        dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
+        isClicked = false;
+        //print("moving box of choices" );
+        yield return new WaitUntil(() => isClicked);
+        isClicked = false;
+        //print("player has chosen");
+        dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
+
+        StartCoroutine( TypeWrite(selection.choices[clickedButton].reactionText, playerText));
+        
+        
 	}
 
     
@@ -90,7 +107,6 @@ public class dialogueLibrary : MonoBehaviour
         for (int i = 1; i <= line.choices[clickedButton].dialogueLine.Length; i++)
         {
             playerText.text = line.choices[clickedButton].dialogueLine.Substring(0, i);
-
 
             yield return new WaitForSeconds(dialogueSpeed);
         }

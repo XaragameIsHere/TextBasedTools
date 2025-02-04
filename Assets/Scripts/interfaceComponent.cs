@@ -27,7 +27,6 @@ public class DialogueParsing
     {
         public string reactionText;
         public string[] reaction;
-        public DialogueLine[] dialogueLines;
         public string nextDialogueSelection;
     }
 
@@ -35,7 +34,7 @@ public class DialogueParsing
     public class Selection
     {
         public string name;
-        public string context;
+        public DialogueLine[] context;
         public Choice[] choices;
     }
 
