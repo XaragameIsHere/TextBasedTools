@@ -2,53 +2,53 @@
     {
       
      
-        "cutscene_Dialogue":
+        "cutsceneDialogue":
         [
             {
-                "Start":
+                "start":
                 [
                     
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "You are at a train station",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "The time is 12:00 a.m.",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "The next train arrives in 5 minutes",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "This is the LAST train. Don't miss it",
                         "Name": "TestDuck"
                     }
                 ],
-                "End":
+                "end":
                 [
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "The working classes enter the station looking for the CEO",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "They see you standing next to the corpse of a police officer and a healthcare CEO",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "They ignore the 34 Dead Children and immediately cheer you on as their hero. Lifting you onto their shoulders and chanting your name.",
                         "Name": "TestDuck"
                     },
                     {
                         "Sprite": "Assets/Sprites/",
-                        "dialogueText": "Insert text Here",
+                        "dialogueText": "It's 12:05. The B-train arrives as the masses carry you onto the train chanting your name and you all go home.",
                         "Name": "TestDuck"
                     }
                 ]
@@ -58,36 +58,176 @@
         [
             {
             
-                "Name": "SelectionStart",
-                "Context": "You ain’t getting past me!",
+                "name": "SelectionStart",
+                "context": "A rat comes up to you asking for cheese",
                 "choices":
                 [
                     {
-                        "ReactionText": "",
+                        "reactionText": "You scrounge around in your pockets to find a spare cheese cube you forgot there. The rat eats it before proclaiming, 'You fool, I am now energized enough to bite you!' The rat bites you and scurries off. You now have the bubonic plague and slowly and painfully perish before falling onto the tracks and having the third rail electrocute your corpse.",
                         "Reaction": 
                                 [
                                     ""
                                 ],
-                        "dialogueLine": "Hey, let’s just talk about this.",
-                        "next_Dialogue_Selection": "Selection2"
+                        "dialogueLine": "Give the rat some cheese",
+                        "nextDialogueSelection": "BadEnd"
                     },
                     {
-                        "Reaction": 0,
-                        "dialogueLine": "Hey, let’s just talk about this.",
-
-                        "next_Dialogue_Selection": "Selection3"
+                        "reactionText": "You tell the rat, 'No free lunches freeloader. Get a job and pull yourself up by your bootstraps like me.' The rat does not take kindly to this. The rat takes out its tiny rat phone and in its dying breaths calls in a bomb threat to the station. SWAT teams arrive and shot you immediately. Your corps falls onto the third rail and is electrocuted.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "You don't give the rat some cheese",
+                        "nextDialogueSelection": "BadEnd"
                     },
                     {
-                        "Reaction": -1,
-                        "dialogueLine": "Are you just Ghost’s pawn?",
+                        "reactionText": "You kick the rat onto the tracks. Flinging them onto the third rail, electrocuting and killing them instantly. You check your phone. It is now 12:01 A.M.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Kick the rat onto the tracks",
+                        "nextDialogueSelection": "Selection2"
+                    }
+                ]
+            },
+            {
 
-                        "next_Dialogue_Selection": "Selection3"
+                "name": "Selection2",
+                "context": "A man comes to you with a petition",
+                "choices":
+                [
+                    {
+                        "reactionText": "The man says, 'muhahahaha, YOU FOOL! You just signed a contract that says I get to push you onto the tracks!' He pushes you onto the tracks and you die instantaneously as you hit the third rail",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Sign it",
+                        "nextDialogueSelection": "BadEnd"
                     },
                     {
-                        "Reaction": -2,
+                        "reactionText": "The man gets angry, 'stupid bitch!' He yells before sparta kicking you onto the third rail, electrocuting you instantaneously",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Don't sign it",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You shove the man onto the tracks. Flinging him onto the third rail, electrocuting and killing him instantly. You check your phone. It is now 12:02 A.M.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Throw him onto the tracks",
+                        "nextDialogueSelection": "Selection3"
+                    }
+                ]
+            },
+            {
 
-                        "dialogueLine": "OH YEAH I AM",
-                        "next_Dialogue_Selection": "Selection4"
+                "name": "Selection3",
+                "context": "A group of 34 children are lost and asking for directions back to their teacher",
+                "choices":
+                [
+                    {
+                        "reactionText": "You attempt to lead the lost children back to their teacher, turning around to exit the station. But before you know it, all 34 children have surrounded you and say in unison, 'We are evil children, we are going to throw you onto the tracks!' The evil children throw you onto the tracks and you are electrocuted as you hit the third rail.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Lead the children",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "The lead child looks to their peers and says, 'get him,' calmly. All 34 children now surround you. They all beat you half to death, steal your wallet, your phone, and throw you onto the third rail. Electrocuting you instantly.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Ignore the children",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You shove all 34 children onto the tracks. Flinging them onto the third rail, electrocuting and killing all 34 children instantly. You check your phone. It is now 12:03 A.M.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Shove all 34 children onto the tracks",
+                        "nextDialogueSelection": "Selection4"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection4",
+                "context": "A Healthcare CEO comes up to you panicked, 'HELP! The working classes of America have become class conscious and are trying to LUIGI me. Get me out of here safely and I'll give you a Billion Dollars.",
+                "choices":
+                [
+                    {
+                        "reactionText": "The CEO asks you to follow him into the bathroom and tells you to switch clothes. Blinded by the riches you do. You both exit the bathroom and the CEO bolts it to the exit. The working classes of Los Angeles find you and shove you onto the tracks. The CEO flees to Switzerland and you die instantaneously as you are electrocuted by the third rail.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Help the CEO",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You ignore the CEO. In response the CEO Says, 'Fuck you I'm cancelling your insurance!' and walks away. You check your phone, it is 12:04 A.M. 'Just a few more minutes' you whisper to yourself. Right as a tweaker runs up and shanks you. You try to call an ambulance but it'll cost you $20,000 without insurance. As you bleed out the stampede of the angry working classes stampede you and push your barely alive corpse onto the third rail. Killing you instantly.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Ignore the CEO",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You shove the CEO onto the tracks. Flinging him onto the third rail, electrocuting and killing him instantly. You check your phone. It is now 12:04 A.M.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Shove the CEO onto the tracks",
+                        "nextDialogueSelection": "Selection5"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection5",
+                "context": "A Police officer comes up to you. He tells you he is looking for the brutal savage who shoved a rat, a man with a petition, 34 innocent children, and a Healthcare CEO onto the tracks",
+                "choices":
+                [
+                    {
+                        "reactionText": "The officer nearly buys it, starting off to where you pointed. But then he turns and notices the dead bodies on the track and connects the dots. It's you! You get arrested and sentenced to the electric chair and die instantly",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Tell the officer, 'He went that way'",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You tell the police, 'It was me, oops didn't know that was illegal.' He says, 'it's okay buddy, we all make mistakes. Unfortunately I gotta take you in' As you and the police officer walk off the police officer spots on the other side of the platform an innocent black teenage boy with a bag of skittles. He screams, 'BLACK MAN!' before shooting 18 times missing every shoot. Each one ricocheting off the emergency exit door and shooting you in the head. Propelling you onto the tracks where you are shocked by the third rail and die.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Turn yourself in to the police",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You shove the police officer onto the tracks. Flinging him onto the third rail, electrocuting and killing him instantly. You check your phone. It is now 12:05 A.M. train should be here any minute.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Shove the police officer onto the tracks",
+                        "nextDialogueSelection": "end"
                     }
                 ]
             }

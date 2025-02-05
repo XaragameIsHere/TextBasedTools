@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -12,7 +14,9 @@ public class dialogueLibrary : MonoBehaviour
 
     public bool dev_SkipCutscene = false;
     public bool inSelection = false;
+    public TextAsset jsonFile;
     private DialogueParsing.DialogueData mainData;
+    [HideInInspector] public DialogueParsing.Dialogue dialogueRoot;
 
 	public RawImage dialogueChoiceBox;
     public Slider patienceMeter;
@@ -35,148 +39,136 @@ public class dialogueLibrary : MonoBehaviour
             yield return new WaitForSeconds(dialogueSpeed);
         }
         
+        playerTextEnter.enabled = true;
         textBox.text = text;
     }
     
+    private bool isClicked = false;
+    int clickedButton;
     
     public IEnumerator Dialogue(DialogueParsing.Selection selection)
     {
-        foreach (DialogueParsing.DialogueLine line in selection.context)
-        {
-            StartCoroutine( TypeWrite(line.dialogueText, playerText));
-            
-            playerTextEnter.enabled = true;
-			
-            yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-            playerTextEnter.enabled = false;
-
-			playerText.text = "";
-		}
+        StartCoroutine( TypeWrite(selection.context, playerText));
         
-        dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
+		
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+        playerTextEnter.enabled = false;
+
+		playerText.text = "";
+
+        for (int i = 0; i < choiceButtons.Count; i++)
+        {
+            choiceButtons[i].text = selection.choices[i].dialogueLine;
+        }
+        
+        dialogueChoiceBox.transform.DOLocalMoveX(600, 1);
         isClicked = false;
         //print("moving box of choices" );
         yield return new WaitUntil(() => isClicked);
         isClicked = false;
-        //print("player has chosen");
-        dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
-
+        print(clickedButton);
+        dialogueChoiceBox.transform.DOLocalMoveX(1300, 1);
+        
         StartCoroutine( TypeWrite(selection.choices[clickedButton].reactionText, playerText));
         
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+        playerTextEnter.enabled = false;
+
+        if (selection.choices[clickedButton].nextDialogueSelection == "end")
+        {
+            StartCoroutine(Scene(dialogueRoot.cutsceneDialogue[0].end, "end"));
+        }
+        else if (selection.choices[clickedButton].nextDialogueSelection == "BadEnd")
+        {
+            
+            StartCoroutine(Scene(dialogueRoot.cutsceneDialogue[0].end, "BadEnd"));
+        }
+        else
+        {
+            navigateToSelection(selection.choices[clickedButton].nextDialogueSelection);
+        }
         
 	}
+    
+    public IEnumerator Scene(DialogueParsing.DialogueLine[] sceneData, string sceneName)
+    {
+        if (sceneName != "BadEnd")
+        {
+            foreach (DialogueParsing.DialogueLine line in sceneData)
+            {
+                StartCoroutine( TypeWrite(line.dialogueText, playerText));
+            
+			
+                yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+                playerTextEnter.enabled = false;
 
-    
-    
-    private bool isClicked = false;
-    int clickedButton;
+                playerText.text = "";
+            
+            
+            }
+        }
+        
+
+        if (sceneName == "start")
+        {
+            
+            navigateToSelection("SelectionStart");
+            yield break;
+        }
+        
+        if (sceneName == "end")
+        {
+            StartCoroutine( TypeWrite("You made it home!", playerText));
+            
+        }
+        else if (sceneName == "BadEnd")
+        {
+            StartCoroutine( TypeWrite("YOU DIED", playerText));
+        }
+
+        playerTextEnter.enabled = true;
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+        playerTextEnter.enabled = false;
+
+        playerText.text = "";
+        StartCoroutine( TypeWrite("Play Again?", playerText));
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
+        
+        SceneManager.LoadScene(0);
+    }
+
+    private void Start()
+    {
+        
+        dialogueRoot = JsonUtility.FromJson<DialogueParsing.Dialogue>(jsonFile.text);
+        print(dialogueRoot.cutsceneDialogue[0].start);
+        StartCoroutine(Scene(dialogueRoot.cutsceneDialogue[0].start, "start"));
+    }
+
     public void click(int s) 
     {
         clickedButton = s;
         isClicked = true;
     }
 
-    /*
-     
-    Important, stuff for typewriter effect
     
-    
-    
-    private Coroutine dialogueRoutine;
-    private IEnumerator typeWrite(DialogueParsing.Dialogue dialogueRoot, DialogueParsing.Selection line)
-    {
-
-        
-
-        //print("finished typewriting "+ line.enemy_Text);
-        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-        //print("finished creating choices " );
-        for (int i = 0; i < 4; i++)
-        {
-            choiceButtons[i].text = line.choices[i].dialogueLine;
-        }
-
-        dialogueChoiceBox.transform.DOLocalMoveY(-300, 1);
-        isClicked = false;
-        //print("moving box of choices" );
-        yield return new WaitUntil(() => isClicked);
-        isClicked = false;
-        //print("player has chosen");
-        dialogueChoiceBox.transform.DOLocalMoveY(-817, 1);
-
-        for (int i = 1; i <= line.choices[clickedButton].dialogueLine.Length; i++)
-        {
-            playerText.text = line.choices[clickedButton].dialogueLine.Substring(0, i);
-
-            yield return new WaitForSeconds(dialogueSpeed);
-        }
-
-        //print("finished typewriting " + line.choices[clickedButton].dialogueLine);
-        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
-        //print("moving on");
-
-        if (line.choices[clickedButton].next_Dialogue_Selection == "end")
-        {
-            patienceMeter.transform.DOLocalMoveX(-1309, 1);
-            StartCoroutine( dialogue(mainData.End));
-        }
-        else
-        {
-            navigateToSelection(dialogueRoot, line.choices[clickedButton].next_Dialogue_Selection);
-        }
-            
-        
-    }
-*/
-    public void navigateToSelection(DialogueParsing.Dialogue dialogueRoot, string nameOfSelection)
+    public void navigateToSelection(string nameOfSelection)
     {
         print(nameOfSelection);
-        patienceMeter.transform.DOLocalMoveX(-714, 1);
-        dialoguePlayer.transform.DOLocalMoveX(-880, 1);
-
-
 
         foreach (DialogueParsing.Selection data in dialogueRoot.actionSelections)
         {
 
 			if (data.name == nameOfSelection)
             {
-                //print(data.Name);
+                print(data.name);
                 
-                //dialogueRoutine = StartCoroutine(typeWrite(dialogueRoot, data));
+                StartCoroutine(Dialogue(data));
             }
 
         }
 
     }
 
-    /*
-    private float patience = 5;
-    public IEnumerator moveMeter()
-    {
-        patienceMeter.value = patience / 10;
-        while (patience > 0)
-        {
-            yield return new WaitForSeconds(3);
-            patience -= 1;
-            patienceMeter.value = patience/10;
-        }
-        StopCoroutine(dialogueRoutine);
-
-        stopDialogue();
-    }*/
     
-    private void stopDialogue()
-	{
-        print("end");
-        /*
-        patienceMeter.transform.DOLocalMoveX(-1309, 1);
-        dialoguePlayer.transform.DOMoveX(-1712, 1);
-        dialogueEnemy.transform.DOMoveX(-1712, 1);
-        dialogueChoiceBox.transform.DOLocalMoveY(-781, 1);
-        zoomIn.transform.DOLocalMoveY(1635, 1);
-        */
-        
-	}
-
 }
