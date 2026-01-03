@@ -48,7 +48,7 @@ public class dialogueLibrary : MonoBehaviour
     
     public IEnumerator Dialogue(DialogueParsing.Selection selection)
     {
-        StartCoroutine( TypeWrite(selection.context, playerText));
+         yield return TypeWrite(selection.context, playerText);
         
 		
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
@@ -69,7 +69,7 @@ public class dialogueLibrary : MonoBehaviour
         print(clickedButton);
         dialogueChoiceBox.transform.DOLocalMoveX(1300, 1);
         
-        StartCoroutine( TypeWrite(selection.choices[clickedButton].reactionText, playerText));
+        yield return TypeWrite(selection.choices[clickedButton].reactionText, playerText);
         
         yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
         playerTextEnter.enabled = false;
@@ -96,7 +96,7 @@ public class dialogueLibrary : MonoBehaviour
         {
             foreach (DialogueParsing.DialogueLine line in sceneData)
             {
-                StartCoroutine( TypeWrite(line.dialogueText, playerText));
+                yield return TypeWrite(line.dialogueText, playerText);
             
 			
                 yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
@@ -118,12 +118,12 @@ public class dialogueLibrary : MonoBehaviour
         
         if (sceneName == "end")
         {
-            StartCoroutine( TypeWrite("You made it home!", playerText));
+            yield return TypeWrite("You made it home!", playerText);
             
         }
         else if (sceneName == "BadEnd")
         {
-            StartCoroutine( TypeWrite("YOU DIED", playerText));
+            yield return TypeWrite("YOU DIED", playerText);
         }
 
         playerTextEnter.enabled = true;

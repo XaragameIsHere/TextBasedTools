@@ -1,0 +1,336 @@
+
+    {
+      
+     
+        "cutsceneDialogue":
+        [
+            {
+                "start":
+                [
+                    
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You are Nara Zeale Saw. You are an 18 year old transgender woman living two months into a government that has declared your gender identity a mental illness that must be stopped.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You are NOT doing well and NOT making good decisions.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Let's see if we can make some good decisions.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It is 12:55 p.m. on Monday, March 3rd, 2025",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "Your university has invited a man named George Kirkland Rockwater onto your campus.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You have walked over with a speaker and a girl you think is your friend named Fernanda. Intending on having a separate unapproved demonstration with your friends.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "However, they are not there, they have all gone marching.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You do not know this",
+                        "Name": "TestDuck"
+                    }
+                ],
+                "end":
+                [
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "The working classes enter the station looking for the CEO",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "They see you standing next to the corpse of a police officer and a healthcare CEO",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "They ignore the 34 Dead Children and immediately cheer you on as their hero. Lifting you onto their shoulders and chanting your name.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "It's 12:05. The B-train arrives as the masses carry you onto the train chanting your name and you all go home.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "You send a message in the group chat asking where they're at.",
+                        "Name": "TestDuck"
+                    },
+                    {
+                        "Sprite": "Assets/Sprites/",
+                        "dialogueText": "No Reply",
+                        "Name": "TestDuck"
+                    }
+                ]
+            }
+        ],
+        "actionSelections":
+        [
+            {
+            
+                "name": "SelectionStart",
+                "context": "The girl you think is your friend, Fernanda says you should just go in the crowd with the speaker. Your dramatic and attention seeking nature gravitates towards it.",
+                "choices":
+                [
+                    {
+                        "reactionText": "Fernanda ends up going into the crowd, debating Mr. Rockwater and making him look stupid. Unfortunately, that clip somehow didn't make it into his 'OWNING LIBERAL STUDENT in debate' Compilation. You stay behind for about twenty minutes and your friends return. You play your little copyrighted music, DPS tells you turn the volume down. Initially defiant your friends convince you to comply and eventually at 3:00 pm everyone goes home. Nothing really changed, your world is still falling apart. However you did not violate USC's code of conduct. Life goes on.",
+                        "Reaction": 
+                                [
+                                    ""
+                                ],
+                        "dialogueLine": "'Let's just wait for them', you say.",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You enter the crowd, a sea of Mr. Rockwater's white, cisgender fans gawk at you like the freak you are to them. This only emboldens you more, pure spite motivates you to turn on the speaker and play 'No One Mourns the Wicked' at full volume.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'Yeah sure,' you go into the crowd, speaker in hand ready to cause a scene",
+                        "nextDialogueSelection": "Selection2"
+                    },
+                    {
+                        "reactionText": "You go up to the top of the School of Cinematic Arts Building to eat your, now cold, salmon bowl lunch. You feel like a coward and a piece of shit for not standing with your friends and the janitors on strike against a man you view as detestable. This feeling will not go away and will probably lead you to do something even dumber in the future. Alas, you have not commited any violations of the USC code of conduct. Life goes on.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'Eh forget this I'm gonna go finish my lunch', you say",
+                        "nextDialogueSelection": "BadEnd"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection2",
+                "context": "More of Mr. Rockwater's fans notice you. Laughing, mocking, shouting. The hate, yet again, only emboldens you. Some start purposefully bumping into you and shoving you before accusing you of hitting them, attempting to start a fight.",
+                "choices":
+                [
+                    {
+                        "reactionText": "Against Fernanda's encouragements, you leave the crowd and wait by the fountain for about 15 minutes and your friends return. You play your little copyrighted music, DPS tells you turn the volume down. Initially defiant your friends convince you to comply and eventually at 3:00 pm everyone goes home. Nothing really changed, your world is still falling apart. However you did not violate USC's code of conduct. Life goes on.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'Nevermind, this is stupid, I'll just swallow my pride and go wait for my friends'",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You start arguing with one of the guys shoving you. After a few exchanges he calls you a 'Degenerate tranny who shouldn't even be here'. You've had enough and shove him as hard as you can. He absolutely knocks you out clean, putting you in the hospital. However, since you threw the first punch technically, that is a violation of the Physical Harm Policy, and You are expelled. While he gets a semester of Interim Measures remoivng him from campus, allowing him to return and tell the story about how he totally owned that delusional shemale. Great Job, idiot.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'Fuck it, you want a fight I'll give you a fight.'",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You ignore them and keep playing your music. Smile on your face, being performatively happy in contrast to their shouting.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "You just ignore them and keep playing your music.",
+                        "nextDialogueSelection": "Selection3"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection3",
+                "context": "However you are now no longer in compliance with the USC policy on Disorderly Conduct. A random unidentified man in an unmarked polo comes up to you as you're changing songs to 'i'.",
+                "choices":
+                [
+                    {
+                        "reactionText": "'Who even are you', he refuses to identify himself and continues to request that you leave. You sit down and continue to performatively lose yourself in the rhythms of Kendrick Lamar's 'i'.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'Who even are you'",
+                        "nextDialogueSelection": "Selection4"
+                    },
+                    {
+                        "reactionText": "You go up to the top of the School of Cinematic Arts Building to eat your, now cold, salmon bowl lunch. You feel like a coward and a piece of shit for not standing with your friends and the janitors on strike against a man you view as detestable. This feeling will not go away and will probably lead you to do something even dumber in the future. Alas, you have not commited any violations of the USC code of conduct. Life goes on.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Swallow your pride, comply and leave.",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "'Eff this guy. Who does he think he is', you think. You spit on him, he gets DPS you're arrested on assault and are expelled for violating USC's policies about assault on a... Honestly I ain't even gonna cap, I'm the omniscient narrator from the future, but even I don't know who that guy was. But regardless it was definitely assault or battery of smth, so you're definitely getting suspended and maybe even expelled for that. You crazy for that honestly, I didn't expect you to take it THAT far.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Spit at him.",
+                        "nextDialogueSelection": "BadEnd"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection4",
+                "context": "The man leaves, you are still breaking USC policy, but there is still time to go back. Eventually, two DPS officers arrive and request for you to leave. Informing you that you are breaking school policy.",
+                "choices":
+                [
+                    {
+                        "reactionText": "You comply. You leave the crowd and wait by the fountain for about 15 minutes and your friends return. You play your little copyrighted music, DPS tells you turn the volume down. Initially defiant your friends convince you to comply and eventually at 3:00 pm everyone goes home. Nothing really changed, your world is still falling apart. However you did not violate USC's code of conduct. Life goes on.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Comply with the officers and leave",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "'Eff this guy. Who does he think he is', you think. You Punch the DPS officer him, assault and are expelled for violating USC's policies about assault on a school official. Honestly I ain't even gonna cap, I'm the omniscient narrator from the future, but even I don't know who that guy was. But regardless it was definitely assault or battery of smth, so you're definitely getting suspended and maybe even expelled for that. You crazy for that honestly, I didn't expect you to take it THAT far.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Punch the officers",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You stay down on the ground. Telling the officers, 'You gonna have to drag my black ass out of here.' And unlike you, the officers comply, picking you up and taking you out of the venue. Grabbing your speaker and walking out the end.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "'You gonna have to drag my black ass out of here.'",
+                        "nextDialogueSelection": "Selection6"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection6",
+                "context": "The officers start removing you from the venue. Some guy yells out, 'KILL YOURSELF, YOU FUCKING TRANNY.'",
+                "choices":
+                [
+                    {
+                        "reactionText": "You hear the guy in the crowd, you're determined to make a point and annoy everyone here. What point? You'll figure that out later. You go limp as the officers try to take you out. You are continuing to violate the Failure to Comply Policy.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Go Limp.",
+                        "nextDialogueSelection": "Selection7"
+                    },
+                    {
+                        "reactionText": "You break free of the police, running towards the guy and throwing hands. He absolutely knocks you out clean, putting you in the hospital. However, since you threw the first punch, that is a violation of the Physical Harm Policy, along with the Amplified Sound Policy and the Noncompliance Policy. You are expelled. While he gets a semester of Interim Measures remoivng him from campus, allowing him to return and tell the story about how he totally owned that delusional shemale. Great Job, idiot.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Get Him",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "Ignore Him, continue to walk out like the officers order you to. You violated the failure to comply policy and Amplified Sound policy. You will probably experience consequences because of this. Perhaps removal from campus for some amount of time, however, it could be worse, hopefully you learn from your lesson.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Ignore Him, continue to walk out.",
+                        "nextDialogueSelection": "end"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection7",
+                "context": "The officers pick you up, and brings you to the squad car. They ask you what your name is",
+                "choices":
+                [
+                    {
+                        "reactionText": "You are determined to annoy the crap out of the officers arresting you. You shout out, 'Dick and Balls! My name is Dick and Balls!' then proceed to waive your fifth amendment right and start mocking the officers and cracking jokes before eventually telling them your real name. This may not be a new violation of university policy, but nevertheless a very stupid decision you WILL regret this action in the future.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Tell them your name is 'Dick and Balls'",
+                        "nextDialogueSelection": "Selection8"
+                    },
+                    {
+                        "reactionText": "You manage to writhe out of the officers control and run around screaming for a bit, continuing to violate the noncompliance policy along with the amplified sound policy you already violated. You get tackled, arrested, and receive what is likely an even longer suspension than what you would have otherwise.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Run around",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You tell the officers your name is Nara Zeale Saw. You now begin to comply and stop talking. They search your bag and find the brick you keep on you for self defense and stupidly forgot to remove before entering campus. This may be a violation of the Weapons/Firearms/Explosives policy and will likely be suspended. However, you may be able to return in the fall.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Tell him your name.",
+                        "nextDialogueSelection": "end"
+                    }
+                ]
+            },
+            {
+
+                "name": "Selection8",
+                "context": "The officers arrest you, booking you at the LAPD 77th division station in a holding cell on your own. With a tray containing a ham sandwich, apple, sun chips, and juice.",
+                "choices":
+                [
+                    {
+                        "reactionText": "You realize the peculiarity of your situation. You are arrested. Your freedom, restricted in a way you've never experienced before. It's strange... counterintuitively, it's somewhat liberating. You... can't... do... anything. The world slows and a cacophonous storm of intrusive thoughts and distractions abates. Like on driving the 405 at 2 A.M., what was once a setting of chaos and over-stimulation turns into a quiet, empty, tranquil, liminal space with very little to think about. Except for that stain in the wall in front of me",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Meditate",
+                        "nextDialogueSelection": "Selection5"
+                    },
+                    {
+                        "reactionText": "You take the tray of food and throw it across the cell. Creating a ham and juice explosion on the wall. This of course, does nothing to help your case and in fact gets you sent off to the men's central jail. Great job idiot.",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Trash the cell",
+                        "nextDialogueSelection": "BadEnd"
+                    },
+                    {
+                        "reactionText": "You just kinda sit there and cry about it, you have violated the policy on disorderly conduct and non-compliance",
+                        "Reaction":
+                        [
+                            ""
+                        ],
+                        "dialogueLine": "Cry",
+                        "nextDialogueSelection": "end"
+                    }
+                ]
+            }
+        ]
+      
+    }
