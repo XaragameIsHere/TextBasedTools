@@ -118,12 +118,12 @@ public class dialogueLibrary : MonoBehaviour
         
         if (sceneName == "end")
         {
-            yield return TypeWrite("You made it home!", playerText);
+            yield return TypeWrite("It's Finally Over. Life Goes on. Better decisions will be made.", playerText);
             
         }
         else if (sceneName == "BadEnd")
         {
-            yield return TypeWrite("YOU DIED", playerText);
+            yield return TypeWrite("GAME OVER", playerText);
         }
 
         playerTextEnter.enabled = true;
